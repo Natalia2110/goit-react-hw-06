@@ -7,13 +7,10 @@ import { selectContacts } from "../../redux/contactsSlice";
 const ContactList = () => {
   const contacts = useSelector(selectContacts);
   const filterValue = useSelector(selectNameFilter);
-  // console.log(contacts);
-  // console.log(filterValue);
 
   const filteredContacts = contacts.filter((contact) => {
     return contact.name.toLowerCase().includes(filterValue.toLowerCase());
   });
-  // console.log(filteredContacts);
   return (
     <ul className={css["contacts-list"]}>
       {filteredContacts.map((contact) => {
